@@ -29,9 +29,29 @@ themes = st.selectbox("Escolha Themes:", ["Art Nouveau with floral motifs", "fut
 brushwork = st.selectbox("Escolha o Brushwork:", ["strokes", "stippling", "hatching", "blending", "dry brush", "splattering"])
 
 
-# Concatenar as escolhas para formar o prompt
-prompt = f"{aspect_ratio} {medium}: {objeto} in {ambiente}, {viewpoint}, {main_setting}, {timing}, {atmosphere}, {weather}, {depth_details}, {lighting}, {movement}, {cultural_touches}"
-# Adicione aqui a concatenação das outras categorias...
+# Lista para armazenar características escolhidas
+caracteristicas = []
+
+# Adiciona características à lista se não forem "None"
+if viewpoint != "None": caracteristicas.append(viewpoint)
+if main_setting != "None": caracteristicas.append(main_setting)
+if timing != "None": caracteristicas.append(timing)
+if atmosphere != "None": caracteristicas.append(atmosphere)
+if weather != "None": caracteristicas.append(weather)
+if depth_details != "None": caracteristicas.append(depth_details)
+if lighting != "None": caracteristicas.append(lighting)
+if movement != "None": caracteristicas.append(movement)
+if artistic_era != "None": caracteristicas.append(artistic_era)
+if color_palette != "None": caracteristicas.append(color_palette)
+if detail_level != "None": caracteristicas.append(detail_level)
+if themes != "None": caracteristicas.append(themes)
+if brushwork != "None": caracteristicas.append(brushwork)
+
+# Concatena as características escolhidas
+caracteristicas_str = ", ".join(caracteristicas)
+
+# Formata o prompt final
+prompt = f"{medium} de {objeto} num ambiente descrito como {ambiente}, {caracteristicas_str}"
 
 # Exibir o prompt
 st.write("Prompt Gerado:")
