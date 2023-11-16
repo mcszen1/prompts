@@ -9,20 +9,18 @@ objeto = st.text_input("Descreva o objeto para a imagem:")
 ambiente = st.text_input("Descreva o ambiente onde o objeto estará:")
 
 # Seleção de Aspect Ratio, Medium, etc.
-aspect_ratio = st.selectbox("Escolha o Aspect Ratio:", ["Square", "Wide", "Tall"])
+aspect_ratio = st.selectbox("Escolha o Aspect Ratio:", ["Quadrado", "16:9", "9:16"])
 medium = st.selectbox("Escolha o Medium:", ["photo", "watercolor", "illustration", "3D model", "pixel art"])
-# Adicione aqui as outras categorias e opções...
 
 # Opções de Scene
 viewpoint = st.selectbox("Escolha o Viewpoint:", ["bird's-eye", "ground", "close-up", "side view", "diagonal angle"])
 main_setting = st.selectbox("Escolha o Main Setting:", ["beach", "forest", "city", "mountains", "space", "underwater"])
-timing = st.selectbox("Escolha o Timing:", ["time of day", "season", "era", "future", "past"])
+timing = st.selectbox("Escolha o Timing:", ["manhã", "tarde", "noite", "futuro", "passado"])
 atmosphere = st.selectbox("Escolha o Atmosphere:", ["serene", "bustling", "mysterious", "chaotic", "peaceful"])
 weather = st.selectbox("Escolha o Weather:", ["sunny", "windy", "calm seas", "stormy", "snowy", "foggy"])
 depth_details = st.selectbox("Escolha o Depth Details:", ["foreground to background", "layered", "flat", "dynamic depth"])
 lighting = st.selectbox("Escolha o Lighting:", ["soft", "backlit", "golden hour", "overcast", "glowing", "tenebrism", "harsh shadows"])
 movement = st.selectbox("Escolha o Movement:", ["static", "dynamic", "fast-paced", "slow motion"])
-cultural_touches = st.selectbox("Escolha o Cultural Touches:", ["stalls", "festivals", "attire", "architecture", "local customs"])
 # Opções de Style
 artistic_era = st.selectbox("Escolha a Artistic Era:", ["impressionism", "Van Gogh style", "renaissance", "surrealism", "modernism", "baroque"])
 color_palette = st.selectbox("Escolha a Color Palette:", ["vivid", "pastel", "monochrome", "warm tones", "cool tones", "neon"])
