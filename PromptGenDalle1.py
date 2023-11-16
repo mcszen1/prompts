@@ -13,45 +13,46 @@ aspect_ratio = st.selectbox("Escolha o Aspect Ratio:", ["Quadrado", "16:9", "9:1
 medium = st.selectbox("Escolha o Medium:", ["photo", "watercolor", "illustration", "3D model", "pixel art"])
 
 # Opções de Scene
-viewpoint = st.selectbox("Escolha o Viewpoint:", ["bird's-eye", "ground", "close-up", "side view", "diagonal angle"])
-main_setting = st.selectbox("Escolha o Main Setting:", ["beach", "forest", "city", "mountains", "space", "underwater"])
-timing = st.selectbox("Escolha o Timing:", ["manhã", "tarde", "noite", "futuro", "passado"])
-atmosphere = st.selectbox("Escolha o Atmosphere:", ["serene", "bustling", "mysterious", "chaotic", "peaceful"])
-weather = st.selectbox("Escolha o Weather:", ["sunny", "windy", "calm seas", "stormy", "snowy", "foggy"])
-depth_details = st.selectbox("Escolha o Depth Details:", ["foreground to background", "layered", "flat", "dynamic depth"])
-lighting = st.selectbox("Escolha o Lighting:", ["soft", "backlit", "golden hour", "overcast", "glowing", "tenebrism", "harsh shadows"])
-movement = st.selectbox("Escolha o Movement:", ["static", "dynamic", "fast-paced", "slow motion"])
-# Opções de Style
-artistic_era = st.selectbox("Escolha a Artistic Era:", ["impressionism", "Van Gogh style", "renaissance", "surrealism", "modernism", "baroque"])
-color_palette = st.selectbox("Escolha a Color Palette:", ["vivid", "pastel", "monochrome", "warm tones", "cool tones", "neon"])
-detail_level = st.selectbox("Escolha o Detail Level:", ["minimalist", "rough", "refined", "hyper-realistic", "abstract", "stylized"])
-themes = st.selectbox("Escolha Themes:", ["Art Nouveau with floral motifs", "futuristic", "medieval", "steampunk", "cyberpunk", "nature-inspired"])
-brushwork = st.selectbox("Escolha o Brushwork:", ["strokes", "stippling", "hatching", "blending", "dry brush", "splattering"])
+viewpoint = st.selectbox("Escolha o Ponto de Vista:", ["Vista aérea", "Nível do Solo", "Close-up", "Vista Lateral", "Ângulo Diagonal", "Nenhum"])
+main_setting = st.selectbox("Escolha o Ambiente Principal:", ["Praia", "Floresta", "Cidade", "Montanhas", "Espaço", "Subaquático", "Nenhum"])
+timing = st.selectbox("Escolha o Tempo:", ["Manhã", "Tarde", "Noite", "Futuro", "Passado", "Nenhum"])
+atmosphere = st.selectbox("Escolha a Atmosfera:", ["Sereno", "Movimentado", "Misterioso", "Caótico", "Pacífico", "Nenhum"])
+weather = st.selectbox("Escolha o Clima:", ["Ensolarado", "Ventoso", "Mares Calmos", "Tempestuoso", "Nevoso", "Nebuloso", "Nenhum"])
+depth_details = st.selectbox("Escolha os Detalhes de Profundidade:", ["Do primeiro plano ao fundo", "Em camadas", "Plano", "Profundidade dinâmica", "Nenhum"])
+lighting = st.selectbox("Escolha a Iluminação:", ["Suave", "Contraluz", "Hora Dourada", "Nublado", "Brilhante", "Tenebrismo", "Sombras Duras", "Nenhum"])
+movement = st.selectbox("Escolha o Movimento:", ["Estático", "Dinâmico", "Rápido", "Câmera Lenta", "Nenhum"])
+# Opções de Estilo
+artistic_era = st.selectbox("Escolha a Era Artística:", ["Impressionismo", "Estilo Van Gogh", "Renascimento", "Surrealismo", "Modernismo", "Barroco", "Nenhum"])
+color_palette = st.selectbox("Escolha a Paleta de Cores:", ["Vívida", "Pastel", "Monocromático", "Tons Quentes", "Tons Frios", "Neon", "Nenhum"])
+detail_level = st.selectbox("Escolha o Nível de Detalhe:", ["Minimalista", "Rústico", "Refinado", "Hiper-realista", "Abstrato", "Estilizado", "Nenhum"])
+themes = st.selectbox("Escolha Temas:", ["Art Nouveau com motivos florais", "Futurista", "Medieval", "Steampunk", "Cyberpunk", "Inspirado na Natureza", "Nenhum"])
+brushwork = st.selectbox("Escolha o Tipo de Pincelada:", ["Pinceladas", "Pontilhismo", "Hachura", "Esfumado", "Pincel Seco", "Respingos", "Nenhum"])
+
 
 
 # Lista para armazenar características escolhidas
 caracteristicas = []
 
 # Adiciona características à lista se não forem "None"
-if viewpoint != "None": caracteristicas.append(viewpoint)
-if main_setting != "None": caracteristicas.append(main_setting)
-if timing != "None": caracteristicas.append(timing)
-if atmosphere != "None": caracteristicas.append(atmosphere)
-if weather != "None": caracteristicas.append(weather)
-if depth_details != "None": caracteristicas.append(depth_details)
-if lighting != "None": caracteristicas.append(lighting)
-if movement != "None": caracteristicas.append(movement)
-if artistic_era != "None": caracteristicas.append(artistic_era)
-if color_palette != "None": caracteristicas.append(color_palette)
-if detail_level != "None": caracteristicas.append(detail_level)
-if themes != "None": caracteristicas.append(themes)
-if brushwork != "None": caracteristicas.append(brushwork)
+if viewpoint != "Nenhum": caracteristicas.append(viewpoint)
+if main_setting != "Nenhum": caracteristicas.append(main_setting)
+if timing != "Nenhum": caracteristicas.append(timing)
+if atmosphere != "Nenhum": caracteristicas.append(atmosphere)
+if weather != "Nenhum": caracteristicas.append(weather)
+if depth_details != "Nenhum": caracteristicas.append(depth_details)
+if lighting != "Nenhum": caracteristicas.append(lighting)
+if movement != "Nenhum": caracteristicas.append(movement)
+if artistic_era != "Nenhum": caracteristicas.append(artistic_era)
+if color_palette != "Nenhum": caracteristicas.append(color_palette)
+if detail_level != "Nenhum": caracteristicas.append(detail_level)
+if themes != "Nenhum": caracteristicas.append(themes)
+if brushwork != "Nenhum": caracteristicas.append(brushwork)
 
 # Concatena as características escolhidas
 caracteristicas_str = ", ".join(caracteristicas)
 
 # Formata o prompt final
-prompt = f"{medium} de {objeto} num ambiente descrito como {ambiente}, {caracteristicas_str}"
+prompt = f"Gere uma imagem com as seguintes descrições com quatro opções: {medium} de {objeto} num ambiente descrito como {ambiente}, {caracteristicas_str}"
 
 # Exibir o prompt
 st.write("Prompt Gerado:")
