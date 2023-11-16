@@ -1,7 +1,9 @@
 import streamlit as st
 
+st.image('labcom_logo_preto.jpg')
+st.title("ASSISTENTE DE PROMPT DESIGN PARA IMAGENS")
 # Títulos e Introdução
-st.title("Assistente de Criação de Prompts para DALL-E 3")
+
 st.subheader("Defina as características da sua imagem")
 
 # Entrada do usuário para descrição do objeto e ambiente
