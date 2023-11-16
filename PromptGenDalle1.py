@@ -54,7 +54,7 @@ if brushwork != "Nenhum": caracteristicas.append(brushwork)
 caracteristicas_str = ", ".join(caracteristicas)
 
 # Formata o prompt final
-prompt = f"Gere uma imagem com as seguintes características: {medium} de {objeto} num ambiente descrito como {ambiente}, {caracteristicas_str}"
+prompt = f"Gere uma imagem com quatro opções e as seguintes características: {medium} de {objeto} num ambiente descrito como {ambiente}, {caracteristicas_str}"
 
 # Exibir o prompt
 st.write("Prompt Gerado:")
