@@ -24,11 +24,11 @@ depth_details = st.selectbox("Escolha os Detalhes de Profundidade:", ["Do primei
 lighting = st.selectbox("Escolha a Iluminação:", ["Suave", "Contraluz", "Hora Dourada", "Nublado", "Brilhante", "Tenebrismo", "Sombras Duras", "Nenhum"])
 movement = st.selectbox("Escolha o Movimento:", ["Estático", "Dinâmico", "Rápido", "Câmera Lenta", "Nenhum"])
 # Opções de Estilo
-artistic_era = st.selectbox("Escolha a Era Artística:", ["Impressionismo", "Estilo Van Gogh", "Renascimento", "Surrealismo", "Modernismo", "Barroco", "Nenhum"])
-color_palette = st.selectbox("Escolha a Paleta de Cores:", ["Vívida", "Pastel", "Monocromático", "Tons Quentes", "Tons Frios", "Neon", "Nenhum"])
-detail_level = st.selectbox("Escolha o Nível de Detalhe:", ["Minimalista", "Rústico", "Refinado", "Hiper-realista", "Abstrato", "Estilizado", "Nenhum"])
-themes = st.selectbox("Escolha Temas:", ["Art Nouveau com motivos florais", "Futurista", "Medieval", "Steampunk", "Cyberpunk", "Inspirado na Natureza", "Nenhum"])
-brushwork = st.selectbox("Escolha o Tipo de Pincelada:", ["Pinceladas", "Pontilhismo", "Hachura", "Esfumado", "Pincel Seco", "Respingos", "Nenhum"])
+artistic_era = st.selectbox("Escolha a Era Artística:", ["Nenhum","Impressionismo", "Estilo Van Gogh", "Renascimento", "Surrealismo", "Modernismo", "Barroco"])
+color_palette = st.selectbox("Escolha a Paleta de Cores:", ["Nenhum", "Vívida", "Pastel", "Monocromático", "Tons Quentes", "Tons Frios", "Neon"])
+detail_level = st.selectbox("Escolha o Nível de Detalhe:", ["Nenhum", "Minimalista", "Rústico", "Refinado", "Hiper-realista", "Abstrato", "Estilizado"])
+themes = st.selectbox("Escolha Temas:", ["Nenhum","Art Nouveau com motivos florais", "Futurista", "Medieval", "Steampunk", "Cyberpunk", "Inspirado na Natureza"])
+brushwork = st.selectbox("Escolha o Tipo de Pincelada:", ["Nenhum","Pinceladas", "Pontilhismo", "Hachura", "Esfumado", "Pincel Seco", "Respingos"])
 
 
 
@@ -54,7 +54,7 @@ if brushwork != "Nenhum": caracteristicas.append(brushwork)
 caracteristicas_str = ", ".join(caracteristicas)
 
 # Formata o prompt final
-prompt = f"Gere uma imagem com quatro opções e as seguintes características: {medium} de {objeto} num ambiente descrito como {ambiente}, {caracteristicas_str}"
+prompt = f"Gere uma imagem com as seguintes características: {medium} de {objeto} , com formato {aspect_ratio}, num ambiente descrito como {ambiente}, {caracteristicas_str}"
 
 # Exibir o prompt
 st.write("Prompt Gerado:")
