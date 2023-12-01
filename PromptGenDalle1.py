@@ -15,7 +15,7 @@ aspect_ratio = st.selectbox("Escolha o Aspect Ratio:", ["Quadrado", "16:9", "9:1
 medium = st.selectbox("Escolha o Medium:", ["photo", "watercolor", "illustration", "3D model", "pixel art"])
 
 # Opções de Scene
-viewpoint = st.selectbox("Escolha o Ponto de Vista:", ["Vista aérea", "Nível do Solo", "Close-up", "Vista Lateral", "Ângulo Diagonal", "Nenhum"])
+viewpoint = st.selectbox("Escolha o Ponto de Vista:", ["Visão em Primeira Pessoa", "Vista aérea", "Vista de Baixo", "Vista do Solo", "Close-up", "Vista Frontal", "Vista Lateral", "Vista de Trás", "Visão Panorâmica", "Portal View", "Cross-Section View","Satellite View", "Lente Olho de Peixe","Visão Isométrica", "Ângulo Diagonal", "Nenhum"])
 main_setting = st.selectbox("Escolha o Ambiente Principal:", ["Praia", "Floresta", "Cidade", "Montanhas", "Espaço", "Subaquático", "Nenhum"])
 timing = st.selectbox("Escolha o Tempo:", ["Manhã", "Tarde", "Noite", "Futuro", "Passado", "Nenhum"])
 atmosphere = st.selectbox("Escolha a Atmosfera:", ["Sereno", "Movimentado", "Misterioso", "Caótico", "Pacífico", "Nenhum"])
