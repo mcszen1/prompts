@@ -27,7 +27,7 @@ if palavra:
 	prompt1=f"Wide vector designs printed on a {color} t-shirt showcasing a {detalhe} {object} with a text {letras}"
 
 # Opções de Estilo
-
+detalhe=""
 if medium == "Geométrico": detalhe="geometric"
 if medium == "Pop Art" : detalhe="a pop art portrait of a "
 if medium == "Botânico" : detalhe="a bold botanical illustration of a "
