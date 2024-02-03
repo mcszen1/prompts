@@ -56,9 +56,9 @@ if medium == "Grafite" : detalhe = f"the minimalist word {letras} styled in bold
 
 # Formata o prompt final
 
-prompt=f"Wide vector designs printed on a {color} t-shirt showcasing a {detalhe} {object}"
+prompt=f"Wide vector designs printed on a {color} t-shirt showcasing a {detalhe} {objeto}"
 if palavra:
-	prompt1=f"Wide vector designs printed on a {color} t-shirt showcasing a {detalhe} {object} with a text {letras}"
+	prompt1=f"Wide vector designs printed on a {color} t-shirt showcasing a {detalhe} {objeto} with a text {palavra}"
 
 
 # Exibir o prompt
