@@ -42,7 +42,7 @@ if medium == "Festivo" :
 if medium == "Mangá" : detalhe = "in a manga art style"
 if medium == "Magia" : detalhe = " inspired by the fairtale of"
 if medium == "Wired" : detalhe = " constructed from a interwined wires"
-if medium == "Fractal" : detalhe = f"a fractal pattern centered around a {objeto} 
+if medium == "Fractal" : detalhe = f"a fractal pattern centered around a {objeto}" 
 if medium == "Renascentista" : detalhe = " in a Renaissance art style"
 if medium == "Zodíaco" : 
 	signzod=st.text_input("Digite um signo - Ex: leao")
