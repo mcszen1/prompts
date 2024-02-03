@@ -32,7 +32,7 @@ if medium == "Geométrico": detalhe="geometric"
 if medium == "Pop Art" : detalhe="a pop art portrait of a "
 if medium == "Botânico" : detalhe="a bold botanical illustration of a "
 if medium == "Mítico" : 
-	origem=st.selectbox("Escolha a mitologia:",["Chinese, "Greek", "Nordic", "Indigenous"])
+	origem=st.selectbox("Escolha a mitologia:",["Chinese", "Greek", "Nordic", "Indigenous"])
 	detalhe=f"a legendary creature from a {origem} mitology"
 if medium == "Pixel Art" : detalhe="a pixel art representation of"
 if medium == "Origami" : detalhe="inspired by origami art"
