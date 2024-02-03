@@ -3,7 +3,7 @@ import streamlit as st
 st.image('labcom_logo_preto.jpg')
 st.title("T-SHIRT DESIGN - Crie sua camisa com IA")
 # Títulos e Introdução
-
+detalhe=""
 st.subheader("Defina os elementos principais da sua camisa:")
 
 # Entrada do usuário para descrição do objeto e ambiente
@@ -20,14 +20,8 @@ if letras:
 
 medium = st.selectbox("Escolha o Estilo:", ["Geométrico","Pop Art","Botânico","Mítico","Pixel Art", "Origami","Festivo","Mangá","Magia","Wired","Fractal","Renascentista","Zodíaco","Escultura","Mecânico","Tecido","Watercolor","Etéreo","Rock Style","Kawaii Style", "Expressionismo Abstrato","Grafite" ])
 
-# Formata o prompt final
-
-prompt=f"Wide vector designs printed on a {color} t-shirt showcasing a {detalhe} {object}"
-if palavra:
-	prompt1=f"Wide vector designs printed on a {color} t-shirt showcasing a {detalhe} {object} with a text {letras}"
-
 # Opções de Estilo
-detalhe=""
+
 if medium == "Geométrico": detalhe="geometric"
 if medium == "Pop Art" : detalhe="a pop art portrait of a "
 if medium == "Botânico" : detalhe="a bold botanical illustration of a "
@@ -59,9 +53,11 @@ if medium == "Expressionismo Abstrato" : detalhe = "in a vibrant and abstract re
 if medium == "Grafite" : detalhe = f"the minimalist word {letras} styled in bold graffiti font, radiating with neon hues"
 
 
+# Formata o prompt final
 
-
-
+prompt=f"Wide vector designs printed on a {color} t-shirt showcasing a {detalhe} {object}"
+if palavra:
+	prompt1=f"Wide vector designs printed on a {color} t-shirt showcasing a {detalhe} {object} with a text {letras}"
 
 
 # Exibir o prompt
