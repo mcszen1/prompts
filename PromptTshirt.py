@@ -15,7 +15,8 @@ letras = st.checkbox('Inserir letras.Se quiser, digite uma palavra simples para 
 
 if letras:
     palavra = st.text_input("Digite uma palavra simples:")		
-
+else:
+    palavra = ""
 # Seleção de Estilo da Camisa.
 
 medium = st.selectbox("Escolha o Estilo:", ["Geométrico","Pop Art","Botânico","Mítico","Pixel Art", "Origami","Festivo","Mangá","Magia","Wired","Fractal","Renascentista","Zodíaco","Escultura","Mecânico","Tecido","Watercolor","Etéreo","Rock Style","Kawaii Style", "Expressionismo Abstrato","Grafite" ])
