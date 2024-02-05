@@ -12,6 +12,7 @@ def gen_image (prompt):
 	#image_url = response['data'][0]['url']
 	image_url = response.data[0].url
 	camiseta= requests.get(image_url)
+	global img
 	img = Image.open(BytesIO(camiseta.content))
 
 	st.image(img, caption="Imagem Gerada", use_column_width=True)
