@@ -42,8 +42,7 @@ if medium == "Magia" : detalhe = " an illustration inspired by the fairtale of"
 if medium == "Wired" : detalhe = " an illustration constructed from a interwined wires of a "
 if medium == "Fractal" : detalhe = f"a fractal pattern centered around a " 
 if medium == "Renascentista" : detalhe = " an illustration in a Renaissance art style of a "
-if medium == "Zodíaco" : 
-	signos_zodiaco_dict = {
+signos_zodiaco_dict = {
     "Áries": "Aries",
     "Touro": "Taurus",
     "Gêmeos": "Gemini",
@@ -57,6 +56,7 @@ if medium == "Zodíaco" :
     "Aquário": "Aquarius",
     "Peixes": "Pisces"
 }
+if medium == "Zodíaco" : 
 	signzod= st.selectbox("Qual signo quer representar ?",(
     "Áries",
     "Touro",
