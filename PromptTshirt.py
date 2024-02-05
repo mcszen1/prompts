@@ -122,14 +122,17 @@ else:
 st.write("Prompt Gerado:")
 st.write(prompt1)
 
-if prompt1:
-    with st.spinner('Gerando imagem...'):
-        generated_image = gen_image(prompt1)
-    
-    st.image(generated_image, caption="Imagem Gerada", use_column_width=True)
-    
-    buffer = download_image(generated_image)
-    st.download_button(label="Baixar imagem",
-                       data=buffer,
-                       file_name="dalle_generated_image.png",
-                       mime="image/png")
+if st.button("Gerar imagem"):
+    if prompt:
+        with st.spinner('Gerando imagem...'):
+            generated_image = generate_image_with_dalle(prompt)
+        
+        st.image(generated_image, caption="Imagem Gerada", use_column_width=True)
+        
+        buffer = download_image(generated_image)
+        st.download_button(label="Baixar imagem",
+                           data=buffer,
+                           file_name="dalle_generated_image.png",
+                           mime="image/png")
+    else:
+        st.warning("Por favor, insira um prompt antes de gerar a imagem.")
