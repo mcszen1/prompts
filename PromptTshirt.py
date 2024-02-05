@@ -123,7 +123,7 @@ st.write("Prompt Gerado:")
 st.write(prompt1)
 
 if st.button("Gerar imagem"):
-    if prompt:
+    if prompt1:
         with st.spinner('Gerando imagem...'):
             generated_image = generate_image_with_dalle(prompt)
         
