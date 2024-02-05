@@ -8,7 +8,7 @@ client = OpenAI()
 def gen_image (prompt): 
 	response=client.images.generate(model="dall-e-3",prompt=prompt1, n=1, size="1024x1792")
 	response_json = response.json()
-        image_url = response_json['data'][0]['url']
+	image_url = response_json['data'][0]['url']
 	#image_url = response['data'][0]['url']
 	st.write(image_url)
 	camiseta= requests.get(image_url)
