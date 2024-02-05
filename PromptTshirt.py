@@ -14,7 +14,7 @@ color=st.radio(
     ["White", "Black", "Red", "Blue"],
     captions = ["Branca", "Preta", "Vermelha", "Azul"])
 
-letras = st.checkbox('Inserir letras.Se quiser, digite uma palavra simples para inserir na imagem da camisa, lembrando que a geração de textos ainda não é precisa.')
+letras = st.checkbox('Inserir letras. Digite uma palavra simples para inserir na imagem da camisa. ATENÇÃO : a geração de textos ainda não é precisa.')
 
 if letras:
     palavra = st.text_input("Digite uma palavra simples:")		
