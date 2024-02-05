@@ -6,7 +6,12 @@ from openai import OpenAI
 client = OpenAI()
 
 def gen_image (prompt): 
-	client.images.generate(model="dall-e-3",prompt=prompt1, n=1, size="1024x1792")
+	response=client.images.generate(model="dall-e-3",prompt=prompt1, n=1, size="1024x1792")
+	image_url = response['data'][0]['url']
+        image_response = requests.get(image_url)
+	if image_response.status_code == 200:
+            img = Image.open(BytesIO(image_response.content))
+            return img
 def download_image(image, filename="image.png"):
     buffer = BytesIO()
     image.save(buffer, format="PNG")
@@ -127,12 +132,15 @@ if st.button("Gerar imagem"):
         with st.spinner('Gerando imagem...'):
             generated_image = gen_image(prompt1)
         
-        st.image(generated_image, caption="Imagem Gerada", use_column_width=True)
-        
-        buffer = download_image(generated_image)
-        st.download_button(label="Baixar imagem",
-                           data=buffer,
-                           file_name="dalle_generated_image.png",
-                           mime="image/png")
+        if generated_image is not None:
+            st.image(generated_image, caption="Imagem Gerada", use_column_width=True)
+            
+            buffer = download_image(generated_image)
+            st.download_button(label="Baixar imagem",
+                               data=buffer,
+                               file_name="dalle_generated_image.png",
+                               mime="image/png")
+        else:
+            st.error("Falha ao gerar a imagem. Por favor, tente novamente.")
     else:
         st.warning("Por favor, insira um prompt antes de gerar a imagem.")
