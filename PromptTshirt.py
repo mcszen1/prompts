@@ -142,6 +142,6 @@ if st.button("Gerar imagem"):
                                data=buffer,
                                file_name="dalle_generated_image.png",
                                mime="image/png")
-     else:
+    else:
 	    st.error("Falha ao gerar a imagem. Por favor, tente novamente.")
     
