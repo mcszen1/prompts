@@ -92,8 +92,6 @@ else:
 # Exibir o prompt
 st.write("Prompt Gerado:")
 st.write(prompt)
-if palavra:
-	st.write(prompt1)
 
 # Rodar o aplicativo
 # Para rodar, salve este script como app.py e execute 'streamlit run app.py' no terminal
