@@ -12,9 +12,10 @@ def gen_image (prompt):
 	#image_url = response['data'][0]['url']
 	st.write(response)
 	st.write(response_json)
-	#camiseta= requests.get(image_url)
-	#img = PILImage.open(BytesIO(camiseta.content))
-	#st.image(img, caption="Foto tirada", use_column_width=True)
+	image_url = response.data[0].url
+	camiseta= requests.get(image_url)
+	img = PILImage.open(BytesIO(camiseta.content))
+	st.image(img, caption="Imagem Gerada", use_column_width=True)
 def download_image(image, filename="image.png"):
     buffer = BytesIO()
     image.save(buffer, format="PNG")
