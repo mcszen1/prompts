@@ -129,8 +129,8 @@ else:
 	prompt1=f"Wide vector designs of a {objeto}, printed on a {color} t-shirt showcasing {detalhe} {objeto}. Show the image always using a frontal  view, with 0 (zero) rotation."
 
 # Exibir o prompt
-st.write("Prompt Gerado:")
-st.write(prompt1)
+#st.write("Prompt Gerado:")
+#st.write(prompt1)
 
 if st.button("Gerar imagem"):
     if prompt1:
