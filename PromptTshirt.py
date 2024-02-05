@@ -133,6 +133,7 @@ st.write(prompt1)
 
 if st.button("Gerar imagem"):
     if prompt1:
+    
 	    with st.spinner('Gerando imagem...'):
 		    generated_image = gen_image(prompt1)
 		    st.write(generated_image)
@@ -142,5 +143,5 @@ if st.button("Gerar imagem"):
                                file_name="dalle_generated_image.png",
                                mime="image/png")
      else:
-            st.error("Falha ao gerar a imagem. Por favor, tente novamente.")
+	    st.error("Falha ao gerar a imagem. Por favor, tente novamente.")
     
