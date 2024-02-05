@@ -101,13 +101,13 @@ if medium == "Grafite" : detalhe = f"the minimalist word {letras} styled in bold
 # Formata o prompt final
 
 if palavra !="":
-	prompt=f"Wide vector designs of a {objeto}, printed on a {color} t-shirt showcasing a {detalhe} {objeto} with a text {palavra}. Show the image always using a frontal  view, with 0 (zero) rotation."
+	prompt1=f"Wide vector designs of a {objeto}, printed on a {color} t-shirt showcasing a {detalhe} {objeto} with a text {palavra}. Show the image always using a frontal  view, with 0 (zero) rotation."
 else:
-	prompt=f"Wide vector designs of a {objeto}, printed on a {color} t-shirt showcasing {detalhe} {objeto}. Show the image always using a frontal  view, with 0 (zero) rotation."
+	prompt1=f"Wide vector designs of a {objeto}, printed on a {color} t-shirt showcasing {detalhe} {objeto}. Show the image always using a frontal  view, with 0 (zero) rotation."
 
 # Exibir o prompt
 st.write("Prompt Gerado:")
-st.write(prompt)
+st.write(prompt1)
 
 # Rodar o aplicativo
 # Para rodar, salve este script como app.py e execute 'streamlit run app.py' no terminal
