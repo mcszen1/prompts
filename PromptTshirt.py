@@ -10,13 +10,12 @@ def gen_image (prompt):
 	response_json = response.json()
 	#image_url = response_json['data'][0]['url']
 	#image_url = response['data'][0]['url']
-	st.write(response)
-	st.write(response_json)
 	image_url = response.data[0].url
 	camiseta= requests.get(image_url)
 	img = Image.open(BytesIO(camiseta.content))
 
 	st.image(img, caption="Imagem Gerada", use_column_width=True)
+	
 def download_image(image, filename="image.png"):
     buffer = BytesIO()
     image.save(buffer, format="PNG")
@@ -136,11 +135,9 @@ if st.button("Gerar imagem"):
     if prompt1:
         with st.spinner('Gerando imagem...'):
             generated_image = gen_image(prompt1)
+	    st.write(generated_image)
         
-        if generated_image is not None:
-            st.image(generated_image, caption="Imagem Gerada", use_column_width=True)
-            
-            buffer = download_image(generated_image)
+            buffer = download_image(img)
             st.download_button(label="Baixar imagem",
                                data=buffer,
                                file_name="dalle_generated_image.png",
