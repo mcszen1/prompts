@@ -9,7 +9,10 @@ st.subheader("Defina os elementos principais da sua camisa:")
 # Entrada do usuário para descrição do objeto e ambiente
 objeto = st.text_input("Descreva o elemento principal da camisa. Ex : um dragão")
 
-color=st.text_input("Escolha a cor da camisa. Use apenas uma cor básica. Ex: Branca, Preta, Azul, Vermelha")
+color=st.radio(
+    "Escolha a cor da sua camisa. O algoritmo pode inserir variações neste elemento. Recomendamos usar branco ou preto",
+    ["White", "Black", "Red", "Blue"],
+    captions = ["Branca", "Preta", "Vermelha", "Azul"])
 
 letras = st.checkbox('Inserir letras.Se quiser, digite uma palavra simples para inserir na imagem da camisa, lembrando que a geração de textos ainda não é precisa.')
 
