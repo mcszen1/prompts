@@ -14,7 +14,8 @@ def gen_image (prompt):
 	st.write(response_json)
 	image_url = response.data[0].url
 	camiseta= requests.get(image_url)
-	img = PILImage.open(BytesIO(camiseta.content))
+	img = Image.open(BytesIO(camiseta.content))
+
 	st.image(img, caption="Imagem Gerada", use_column_width=True)
 def download_image(image, filename="image.png"):
     buffer = BytesIO()
