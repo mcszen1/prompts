@@ -85,7 +85,7 @@ if medium == "Zodíaco" :
     "a magic"), index=None, placeholder="Escolha a sua inspiração",)
 	if signzod:
 		sign_en = signos_zodiaco_dict[signzod]
-	detalhe = f"{way} style representation of the zodiac sign of {sign_en}"
+		detalhe = f"{way} style representation of the zodiac sign of {sign_en}"
 
 if medium == "Escultura" : detalhe = " sketch resembling a 3d sculpture of "
 if medium == "Mecânico" : detalhe = "a mechanical version of "
