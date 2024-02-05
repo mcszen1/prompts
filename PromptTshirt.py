@@ -122,7 +122,7 @@ else:
 st.write("Prompt Gerado:")
 st.write(prompt1)
 
-if prompt:
+if prompt1:
     with st.spinner('Gerando imagem...'):
         generated_image = gen_image(prompt1)
     
