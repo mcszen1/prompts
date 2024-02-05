@@ -43,6 +43,20 @@ if medium == "Wired" : detalhe = " an illustration constructed from a interwined
 if medium == "Fractal" : detalhe = f"a fractal pattern centered around a " 
 if medium == "Renascentista" : detalhe = " an illustration in a Renaissance art style of a "
 if medium == "Zodíaco" : 
+	signos_zodiaco_dict = {
+    "Áries": "Aries",
+    "Touro": "Taurus",
+    "Gêmeos": "Gemini",
+    "Câncer": "Cancer",
+    "Leão": "Leo",
+    "Virgem": "Virgo",
+    "Libra": "Libra",
+    "Escorpião": "Scorpio",
+    "Sagitário": "Sagittarius",
+    "Capricórnio": "Capricorn",
+    "Aquário": "Aquarius",
+    "Peixes": "Pisces"
+}
 	signzod= st.selectbox("Qual signo quer representar ?",(
     "Áries",
     "Touro",
@@ -56,6 +70,7 @@ if medium == "Zodíaco" :
     "Capricórnio",
     "Aquário",
     "Peixes"), index=None, placeholder="Escolha o seu signo",)
+        signo_en = signos_zodiaco_dict[signzod]
 	way= st.selectbox("Como quer o representação do signo",(
     "a zen art",
     "a modern art",
@@ -69,7 +84,7 @@ if medium == "Zodíaco" :
     "a cyberpunk",
     "a surrealist",
     "a magic"), index=None, placeholder="Escolha a sua inspiração",)
-	detalhe = f"{way} style representation of the zodiac sign of {signzod}"
+	detalhe = f"{way} style representation of the zodiac sign of {sign_en}"
 
 if medium == "Escultura" : detalhe = " sketch resembling a 3d sculpture of "
 if medium == "Mecânico" : detalhe = "a mechanical version of "
