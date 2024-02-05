@@ -9,9 +9,10 @@ def gen_image (prompt):
 	response=client.images.generate(model="dall-e-3",prompt=prompt1, n=1, size="1024x1792")
 	image_url = response['data'][0]['url']
         image_response = requests.get(image_url)
-	if image_response.status_code == 200:
-            img = Image.open(BytesIO(image_response.content))
-            return img
+	st.write(image_response)
+	#if image_response.status_code == 200:
+            #img = Image.open(BytesIO(image_response.content))
+            #return img
 def download_image(image, filename="image.png"):
     buffer = BytesIO()
     image.save(buffer, format="PNG")
