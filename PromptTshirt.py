@@ -23,24 +23,36 @@ medium = st.selectbox("Escolha o Estilo:", ["Geométrico","Pop Art","Botânico",
 
 # Opções de Estilo
 
-if medium == "Geométrico": detalhe="geometric"
-if medium == "Pop Art" : detalhe="a pop art portrait of a "
-if medium == "Botânico" : detalhe="a bold botanical illustration of a "
+if medium == "Geométrico": detalhe="a geometric"
+if medium == "Pop Art" : detalhe=" a pop art portrait of a "
+if medium == "Botânico" : detalhe=" a bold botanical illustration of a "
 if medium == "Mítico" : 
 	origem=st.selectbox("Escolha a mitologia:",["Chinese", "Greek", "Nordic", "Indigenous"])
-	detalhe=f"a legendary creature from a {origem} mitology"
+	detalhe=f" a legendary creature from a {origem} mitology of a "
 if medium == "Pixel Art" : detalhe="a pixel art representation of"
-if medium == "Origami" : detalhe="inspired by origami art"
+if medium == "Origami" : detalhe="a inspired by origami art"
 if medium == "Festivo" : 
 	festa=st.selectbox("Escolha uma data festiva:", ["New Year", "Christmas","Carnaval"])
-	detalhe=f"celebrating the festive occasion of {festa} with fireworks"
-if medium == "Mangá" : detalhe = "in a manga art style"
-if medium == "Magia" : detalhe = " inspired by the fairtale of"
-if medium == "Wired" : detalhe = " constructed from a interwined wires"
-if medium == "Fractal" : detalhe = f"a fractal pattern centered around a {objeto}" 
-if medium == "Renascentista" : detalhe = " in a Renaissance art style"
+	detalhe=f"a celebration of the festive occasion of {festa} with fireworks"
+if medium == "Mangá" : detalhe = "in a manga art style of a "
+if medium == "Magia" : detalhe = " an illustration inspired by the fairtale of"
+if medium == "Wired" : detalhe = " an illustration constructed from a interwined wires of a "
+if medium == "Fractal" : detalhe = f"a fractal pattern centered around a " 
+if medium == "Renascentista" : detalhe = " an illustration in a Renaissance art style of a "
 if medium == "Zodíaco" : 
-	signzod=st.text_input("Digite um signo - Ex: leao")
+	signzod= st.selectbox("How would you like to be contacted?",(
+    "Áries",
+    "Touro",
+    "Gêmeos",
+    "Câncer",
+    "Leão",
+    "Virgem",
+    "Libra",
+    "Escorpião",
+    "Sagitário",
+    "Capricórnio",
+    "Aquário",
+    "Peixes"), index=None, placeholder="Escolha o seu signo",)
 	detalhe = f"a zen art style representation of the zodiac sign of {signzod}"
 
 if medium == "Escultura" : detalhe = " sketch resembling a 3d sculpture of "
@@ -56,7 +68,7 @@ if medium == "Grafite" : detalhe = f"the minimalist word {letras} styled in bold
 
 # Formata o prompt final
 
-prompt=f"Wide vector designs of a {objeto}, printed on a {color} t-shirt showcasing a {detalhe} {objeto}. Show the image always using a frontal  view, with 0 (zero) rotation."
+prompt=f"Wide vector designs of a {objeto}, printed on a {color} t-shirt showcasing {detalhe} {objeto}. Show the image always using a frontal  view, with 0 (zero) rotation."
 if palavra:
 	prompt1=f"Wide vector designs of a {objeto}, printed on a {color} t-shirt showcasing a {detalhe} {objeto} with a text {palavra}. Show the image always using a frontal  view, with 0 (zero) rotation."
 
