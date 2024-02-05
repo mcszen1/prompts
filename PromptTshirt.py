@@ -133,11 +133,11 @@ st.write(prompt1)
 
 if st.button("Gerar imagem"):
     if prompt1:
-        with st.spinner('Gerando imagem...'):
-		generated_image = gen_image(prompt1)
-		st.write(generated_image)
-		buffer = download_image(img)
-		st.download_button(label="Baixar imagem",
+	    with st.spinner('Gerando imagem...'):
+		    generated_image = gen_image(prompt1)
+		    st.write(generated_image)
+		    buffer = download_image(img)
+		    st.download_button(label="Baixar imagem",
                                data=buffer,
                                file_name="dalle_generated_image.png",
                                mime="image/png")
