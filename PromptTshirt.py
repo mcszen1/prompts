@@ -7,6 +7,11 @@ client = OpenAI()
 
 def gen_image (prompt): 
 	client.images.generate(model="dall-e-3",prompt=prompt1, n=1, size="1024x1792")
+def download_image(image, filename="image.png"):
+    buffer = BytesIO()
+    image.save(buffer, format="PNG")
+    buffer.seek(0)
+    return buffer
 
 st.image('labcom_logo_preto.jpg')
 st.title("T-SHIRT DESIGN - Crie sua camisa com IA")
@@ -117,5 +122,14 @@ else:
 st.write("Prompt Gerado:")
 st.write(prompt1)
 
-# Rodar o aplicativo
-# Para rodar, salve este script como app.py e execute 'streamlit run app.py' no terminal
+if prompt:
+    with st.spinner('Gerando imagem...'):
+        generated_image = gen_image(prompt1)
+    
+    st.image(generated_image, caption="Imagem Gerada", use_column_width=True)
+    
+    buffer = download_image(generated_image)
+    st.download_button(label="Baixar imagem",
+                       data=buffer,
+                       file_name="dalle_generated_image.png",
+                       mime="image/png")
