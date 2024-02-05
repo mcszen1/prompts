@@ -125,7 +125,7 @@ st.write(prompt1)
 if st.button("Gerar imagem"):
     if prompt1:
         with st.spinner('Gerando imagem...'):
-            generated_image = generate_image_with_dalle(prompt)
+            generated_image = gen_image(prompt1)
         
         st.image(generated_image, caption="Imagem Gerada", use_column_width=True)
         
