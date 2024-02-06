@@ -124,9 +124,9 @@ if medium == "Grafite" : detalhe = f"the minimalist word {letras} styled in bold
 # Formata o prompt final
 
 if palavra !="":
-	prompt1=f"Wide vector designs of a {objeto}, printed on a {color} t-shirt showcasing a {detalhe} {objeto} with a text {palavra}. Show the image printed always using a frontal  view, with no kind of rotation or perspective view.Don't generate superposed images."
+	prompt1=f"Wide vector designs of a {objeto}, for printing on a {color} t-shirt, showcasing a {detalhe} {objeto} with a text {palavra}. Show the image printed always using a frontal  view, with no kind of rotation or perspective. Do not generate overlapping images."
 else:
-	prompt1=f" Wide vector designs of a {objeto}, printed on a {color} t-shirt showcasing {detalhe} {objeto}. Show the image printed always using a frontal view, with no kind of rotation or perspective view. Don't generate superposed images."
+	prompt1=f" Wide vector designs of a {objeto}, for printing on a {color} t-shirt, showcasing {detalhe} {objeto}. Show the image printed always using a frontal view, with no kind of rotation or perspective. Do not generate overlapping images."
 
 # Exibir o prompt
 #st.write("Prompt Gerado:")
