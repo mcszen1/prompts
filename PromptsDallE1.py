@@ -19,7 +19,7 @@ st.image("NIDLogo.jpg")
 st.title("Ferramenta de Geração de Prompts para Imagens")
 
 # Carregar tipos de imagens a partir de um arquivo CSV
-file_path = st.file_uploader("Carregar arquivo CSV contendo tipos de imagens", type="csv")
+file_path = 'TarefasPrompt.csv'
 if file_path is not None:
     df_tipos_imagens = carregar_tipos_de_imagens(file_path)
 
