@@ -7,13 +7,11 @@ def carregar_tipos_de_imagens(file_path):
     df = pd.read_csv(file_path)
     return df
 
-# Função para gerar prompt com base no tipo selecionado
-def gerar_prompt(tipo_imagem, prompt_text, variaveis):
-    # Substituir variáveis na estrutura do prompt pelos inputs do usuário
-    for variavel in variaveis:
-        valor = st.text_input(f"Digite o valor para '{variavel}':")
+# Função ajustada para gerar prompt com base no tipo selecionado e valores das variáveis
+def gerar_prompt(tipo_imagem, prompt_text, valores_variaveis):
+    # Substituir variáveis na estrutura do prompt pelos valores fornecidos
+    for variavel, valor in valores_variaveis.items():
         prompt_text = prompt_text.replace(f"[{variavel}]", valor)
-    
     return prompt_text
 
 # Interface do usuário com Streamlit
@@ -34,8 +32,15 @@ if file_path is not None:
     # Encontrar variáveis marcadas entre colchetes na estrutura do prompt
     variaveis = re.findall(r'\[(.*?)\]', prompt_text)
 
+    # Criando um dicionário para armazenar os valores das variáveis
+    valores_variaveis = {}
+
+    # Coletar os valores das variáveis antes de gerar o prompt
+    for variavel in variaveis:
+        valores_variaveis[variavel] = st.text_input(f"Digite o valor para '{variavel}':", key=variavel)
+
     # Gerar prompt e exibir para o usuário
     if st.button("Gerar Prompt"):
-        prompt_gerado = gerar_prompt(tipo_selecionado, prompt_text, variaveis)
+        prompt_gerado = gerar_prompt(tipo_selecionado, prompt_text, valores_variaveis)
         st.write("Prompt Gerado:")
         st.code(prompt_gerado, language='plaintext')
