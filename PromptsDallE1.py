@@ -27,7 +27,7 @@ if file_path is not None:
     tipo_selecionado = st.selectbox("Selecione o tipo de imagem:", df_tipos_imagens["CATEGORIA"])
 
     # Obter a estrutura do prompt para o tipo selecionado
-    prompt_text = df_tipos_imagens[df_tipos_imagens["CATEGORIA"] == tipo_selecionado]["PROMPT"].iloc[0]
+    prompt_text = df_tipos_imagens[df_tipos_imagens["CATEGORIA"] == tipo_selecionado]["TAREFA"].iloc[0]
 
     # Encontrar variáveis marcadas entre colchetes na estrutura do prompt
     variaveis = re.findall(r'\[(.*?)\]', prompt_text)
