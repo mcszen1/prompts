@@ -17,6 +17,7 @@ def gerar_prompt(tipo_imagem, prompt_text, variaveis):
     return prompt_text
 
 # Interface do usuário com Streamlit
+st.image("NIDLogo.jpg")
 st.title("Ferramenta de Geração de Prompts para Imagens")
 
 # Carregar tipos de imagens a partir de um arquivo CSV
