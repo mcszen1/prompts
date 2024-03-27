@@ -16,7 +16,10 @@ def gerar_prompt(tipo_imagem, prompt_text, valores_variaveis):
 
 # Interface do usuário com Streamlit
 st.image("NIDLogo.jpg")
-st.title("Ferramenta de Geração de Prompts para Imagens")
+st.title("Ferramenta de Geração de Prompts para Imagens de Produtos")
+st.write("Conheça o trabalho do NID nas áreas de Treinamento, Consultoria e Desenvolvimento")
+st.write("Link - https://labcomdigital.wixsite.com/nucleodedados")
+st.write("Conheça outras aplicações do NID em https://www.nidlab.com.br/")
 
 # Carregar tipos de imagens a partir de um arquivo CSV
 file_path = 'TarefasPrompt.csv'
