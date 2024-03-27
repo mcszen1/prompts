@@ -26,7 +26,7 @@ if file_path is not None:
     df_tipos_imagens = carregar_tipos_de_imagens(file_path)
 
     # Selecionar o tipo de imagem
-    tipo_selecionado = st.selectbox("Selecione o tipo de imagem:", df_tipos_imagens["CATEGORY"])
+    tipo_selecionado = st.selectbox("Selecione o tipo de imagem:", df_tipos_imagens["CATEGORIA"])
 
     # Obter a estrutura do prompt para o tipo selecionado
     prompt_text = df_tipos_imagens[df_tipos_imagens["CATEGORY"] == tipo_selecionado]["PROMPT"].iloc[0]
